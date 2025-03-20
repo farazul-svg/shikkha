@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Animation Site</title>
+    <style>
+        /* সাধারণ স্টাইল */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* স্ক্রল বার লুকান */
+        }
+
+        /* ভিডিও ব্যাকগ্রাউন্ড */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        #myVideo {
+            min-width: 100%;
+            min-height: 100%;
+            width: 120%; /* ভিডিওটিকে স্ক্রিনের চেয়ে বড় করুন */
+            height: 120%; /* ভিডিওটিকে স্ক্রিনের চেয়ে বড় করুন */
+            object-fit: cover; /* ভিডিওটি সম্পূর্ণ স্ক্রিনে ফিট করবে */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* ভিডিওটিকে কেন্দ্রে রাখুন */
+        }
+
+        /* কার্ড কন্টেইনার */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 10px;
+            margin-top: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 100px); /* ভিডিও এবং বাটনের জন্য জায়গা রাখা */
+        }
+
+        .card {
+            width: 30%;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none; /* লিঙ্কের আন্ডারলাইন সরান */
+            color: inherit; /* লিঙ্কের ডিফল্ট কালার পরিবর্তন করবেন না */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* যোগ করুন বাটন */
+        .add-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        .add-button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .add-button button:hover {
+            background-color: #45a049;
+        }
+
+        /* মোবাইল ভিউ */
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ভিডিও ব্যাকগ্রাউন্ড -->
+    <div class="video-background">
+        <video autoplay muted loop id="myVideo">
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <!-- কার্ড কন্টেইনার -->
+    <div class="card-container">
+        <a href="sadar.html" class="card">যশোর সদর</a>
+        <a href="sarsha.html" class="card">শার্শা</a>
+        <a href="jhikorgacha.html" class="card">ঝিকড়গাছা</a>
+        <a href="monirumpur.html" class="card">মনিরামপুর</a>
+        <a href="ovoy.html" class="card">অভয়নগর</a>
+        <a href="kesob.html" class="card">কেশবপুর</a>
+        <a href="bagha.html" class="card">বাঘাড়পাড়া</a>
+        <a href="chou.html" class="card">চৌগাছা</a>
+    </div>
+
+    <!-- যোগ করুন বাটন -->
+    <div class="add-button">
+        <button onclick="addItem()">➕ যোগ করুন</button>
+    </div>
+
+    <script>
+        // যোগ করুন বাটনের ফাংশন
+        function addItem() {
+            alert("যোগ করুন বাটনে ক্লিক করা হয়েছে!");
+        }
+    </script>
+</body>
+</html>
